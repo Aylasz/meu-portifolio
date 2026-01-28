@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que o padding e border sejam incluídos 
+    na largura e altura totais dos elementos */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    background: #ffffff; /* Fundo branco limpo */
+    color: #333; /* Texto cinza escuro para contraste */
+    padding: 20px 0; /* Bem menos espaçamento, mais compacto */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Uma sombra suave e discreta embaixo */
+    position: relative; /* Necessário para que a sombra fique por cima do conteúdo ao rolar */
+    z-index: 10; /* Garante que o cabeçalho fique "na frente" */
+}
+/* Ajuste para o nome não ficar tão colado na foto */
+header h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto; /* Centraliza a seção na página */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque
+    */
+}
+ul {
+    list-style-type: none; /* Remove os marcadores padrão */
+    display: flex; /* Usa flexbox para layout horizontal */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+.botoes-contato {
+    display: flex;
+    justify-self: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaçamento superior */
+    flex-wrap: wrap; /* Permite que os botões quebrem linha se necessário */
+}
+.btn-link {
+    display: flex; /* Usa flexbox para alinhar ícone e texto */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #f8f9fa; /* Fundo claro */
+    border: 4px solid #e9ecef; /* Borda leve */
+    border-radius: 100px; /* Cantos arredondados */
+    color: #2c3e50; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    transition: all 0.3s; /* Transição suave para hover */
+    text-decoration: none; /* Remove sublinhado */
+}
+.btn-link:hover {
+    transform: translate(-3px); /* Leve movimento para a esquerda */
+    border-color: #3498db; /* Muda a cor da borda */
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba (52, 152, 219, 0.2); /* Adiciona sombra */ 
+    color: #3498db; /* Muda a cor do texto */
+}
+body.dark-mode .btn-link:hover {
+    transform: translate(-3px);
+    border-color: #3498db;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba (52, 152, 219, 0.2);
+    color: #3498db;
+}
+body.dark-mode .btn-link {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #3498db; /* Cor ao passar o mouse */
+}
+.grid-projetos {
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas 
+    responsivas */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin-top: 20px; /* Espaçamento superior */
+}
+.card-projeto {
+    border: 1px solid #ddd; /* Borda leve */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #fff; /* Fundo branco */
+    transition: 0.3s; /* Transição suave para hover */
+}
+.card-projeto:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+.card-projeto.objetivo {
+    border-left: 10px solid #3498db;
+    border-color: #f0f7ff;
+}
+/* 1. Fundo geral e texto principal */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* 2. Corrigindo TODAS as seções (Sobre e Contato) */
+body.dark-mode section {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* 3. Corrigindo os cards de projetos (Atenção ao 's' no final!) */
+body.dark-mode .card-projeto {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #444;
+}
+
+/* 4. Garantindo que os links fiquem visíveis */
+body.dark-mode a {
+    color: #3498db;
+}
+#botao-tema {
+    background-color: #000000; /* O mesmo azul dos links */
+    color: white;
+    border: none; /* Tira aquela borda cinza feia */
+    padding: 10px 20px; /* Dá um "ar" para o texto */
+    border-radius: 20px; /* Deixa bem redondinho */
+    cursor: pointer; /* Mãozinha quando passa o mouse */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s; /* Animação suave de cor */
+    margin-top: 10px; /* Um espacinho do texto de cima */
+}
+
+#botao-tema:hover {
+    background-color: #000000; /* Um preto quando passa o mouse */
+    transform: scale(1.05); /* Dá um leve "zoom" */
+}
+.foto-perfil {
+    width: 150px; /* Largura da foto */
+    height: 150px; /* Altura da foto */
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover; /* Corta a imagem para preencher o espaço */
+    margin-top: 10px;
+    margin-bottom: 15px; /* Espaço abaixo da foto */
+    border: 4px solid #000000; /* Borda preta ao redor da foto */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar destaque */
+}
+/* Um toque extra para o Modo Escuro */
+body.dark-mode .foto-perfil {
+    border-color: #ffffff; /* No escuro, a borda fica branca */
+    box-shadow: 0 8px 10px rgba(255, 255, 255, 0.3); /* Sombra para dar destaque */
+}
+/* Quando o modo escuro está ativo, o cabeçalho muda */
+body.dark-mode header {
+    background-color: #1e1e1e; /* A mesma cor de fundo das seções */
+    color: #ffffff; /* Texto branco */
+    box-shadow: 0 2px 10px rgba(255,255,255,0.05); /* Uma sombra clarinha e sutil */
+}
+.tech-container {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+}
+.tech-badge {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 20px; /* Deixa bem redondinho */
+    font-size: 0.85rem; /* Tamanho um pouco menor */
+    font-weight: bold;
+    border: 1px solid #555;
+}
+body.dark-mode .tech-badge {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+.rodape {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+.container-curriculo {
+    margin-top: 25px;
+    text-align: center;
+}
+.btn-download {
+    display: inline-block; /* Permite definir largura e altura */
+    background-color: #27ae60;
+    color : white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+.btn-download:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px); /* Leve movimento para cima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .btn-download {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+/* --- ESTILO DA TRAJETÓRIA --- */
+
+.container-trajetoria {
+    display: flex; /* Coloca Estudos e Experiência lado a lado */
+    gap: 30px; /* Espaço entre as duas caixas */
+    flex-wrap: wrap; /* Se a tela for pequena, um desce pra baixo do outro */
+    margin-top: 20px;
+}
+
+.box-trajetoria {
+    flex: 1; /* Faz as duas caixas terem o mesmo tamanho */
+    min-width: 250px; /* Garante que não fiquem muito espremidas */
+}
+
+.box-trajetoria h3 {
+    border-bottom: 2px solid #3498db; /* Uma linha azul embaixo do título */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* O visual de cada item (o curso e o trabalho) */
+.item-trajetoria {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db; /* Uma borda azul na esquerda pra dar estilo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+}
+.item-trajetoria:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: default;
+}
+.item-trajetoria h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.instituicao {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.periodo {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.descricao {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- MODO ESCURO PARA TRAJETÓRIA --- */
+
+body.dark-mode .box-trajetoria h3 {
+    color: #fff;
+}
+
+body.dark-mode .item-trajetoria {
+    background-color: #2d2d2d; /* Fundo cinza escuro */
+}
+
+body.dark-mode .item-trajetoria h4 {
+    color: #fff;
+}
+
+body.dark-mode .instituicao {
+    color: #ccc;
+}
+
+body.dark-mode .descricao {
+    color: #bbb;
+}
+body.dark-mode .item-trajetoria:hover {
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.05);
+}
